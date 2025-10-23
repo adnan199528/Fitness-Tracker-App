@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/* Reset and Base Styles */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
+   overflow-x: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Navbar Styles */
+.main-navbar {
+  background: #000;
+  color: #fff;
+  padding: 0.4rem 0; /* Reduced padding again */
+  border-bottom: 1px solid #222;
+   
+}
+
+.main-navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   
+
+}
+
+.main-navbar .nav-title a {
+  color: #fff; /* White color for the logo */
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.main-navbar .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.main-navbar .nav-links a {
+  color: #fff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+.main-navbar .nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FFBF00; /* Mustard color */
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.main-navbar .nav-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.main-navbar .nav-links a:hover {
+  color: #f0f0f0;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFBF00; /* Mustard color */
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* Form Styling */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+form input,
+form select {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+form button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+form button:hover {
+  background: #333;
+}
+
+form p {
+  text-align: center;
+  margin-top: 15px;
+}
+
+form a {
+    color: #333;
+}
+
+
+/* ... existing code ... */
+
+/* Add these styles at the end of your index.css file */
+
+.main-navbar .nav-links {
+  display: flex;
+  gap: 0.02rem;
+  align-items: center;
+}
+
+.main-navbar .nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.main-navbar .nav-links a:hover {
+  color: #f0f0f0;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media screen and (max-width: 960px) {
+  .main-navbar .container {
+    padding: 0 20px;
+  }
+
+  .main-navbar .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 55px; /* Adjust this based on your navbar height */
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    background: #1c1c1c;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+
+  .main-navbar .nav-links.active {
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  .main-navbar .nav-links a {
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    display: table;
+  }
+
+  .main-navbar .nav-links a:hover {
+    background-color: #FFBF00;
+    color: #000;
+    border-radius: 0;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .main-navbar .nav-links .profile-icon,
+  .main-navbar .nav-links .profile-picture {
+    margin: 0 auto 1rem;
+  }
+}
+
+
+/* workout responsive code */
+/* ... aapka pehle se mojood code ... */
+
+/* Media query for responsive tables */
+@media screen and (max-width: 768px) {
+  .table-responsive-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* iOS par behtar scrolling ke liye */
+  }
+}
